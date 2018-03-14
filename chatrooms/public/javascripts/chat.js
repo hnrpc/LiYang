@@ -18,7 +18,8 @@ Chat.prototype.processCommand=function(command){
     var command=words[0].substring(1,words[0].length).toLowerCase();
     var message=false;
     switch(command){
-        case 'join':words.shift();
+        case 'join':
+        words.shift();
         var room=words.join(' ');
         this.changeRoom(room);
         break;

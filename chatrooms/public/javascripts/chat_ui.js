@@ -19,7 +19,7 @@ $(document).ready(function(){
         $('#messages').append(newElement);
     });
     socket.on('rooms',function(rooms){
-        $('room-list').empty();
+        $('#room-list').empty();
         for(var room in rooms)
         {
             room=room.substring(1,room.length);
@@ -46,7 +46,7 @@ function divEscapedContentElement(message){
     return $('<div></div>').text(message);
 }
 function divSystemContentElement(message){
-    return $('<div></div>').html('<li>'+message+'</li>');
+    return $('<div></div>').html('<i>'+message+'</i>');
 }
 //处理原始的用户输入
 function processUserInput(chatApp,socket)

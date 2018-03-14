@@ -2,7 +2,6 @@ var http=require('http');
 var fs=require('fs');
 var path=require('path');
 var mime=require('mime');
-
 var cache={};
 var server=http.createServer(function(request,response){
     var filePath=false;
@@ -29,7 +28,7 @@ function send404(response){
 //发送文件
 function sendFile(response,filePath,fileContents)
 {
-    response.writeHead(200,{"Content-type":mime.lookup(path.basename(filePath))});
+    response.writeHead(200,{"content-type":mime.lookup(path.basename(filePath))});
     response.end(fileContents);
 }
 //静态文件服务
